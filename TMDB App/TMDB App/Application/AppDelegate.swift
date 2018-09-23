@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVc = UINavigationController(rootViewController: UpcomingListViewController())
+        rootVc.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        rootVc.navigationBar.barTintColor = UIColor(red: 248.0/255.0, green: 116.0/255.0, blue: 46.0/255.0, alpha: 1.0)
         window?.rootViewController = rootVc
         window?.makeKeyAndVisible()
         

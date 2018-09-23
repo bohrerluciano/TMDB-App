@@ -25,6 +25,14 @@ final class UpcomingTableViewCell: UITableViewCell {
         self.setupView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageView?.image = nil
+        self.nameLabel.text = nil
+        self.releaseDateLabel.text = nil
+        self.genreLabel.text = nil
+    }
+    
     // MARK: Private methods
     private func setupView() {
         self.backgroundColor = UIColor.clear
@@ -32,6 +40,7 @@ final class UpcomingTableViewCell: UITableViewCell {
         self.containerCell.backgroundColor = UIColor.white
         self.containerCell.layer.cornerRadius = 6
         self.containerCell.clipsToBounds = true
+        self.selectionStyle = .none
     }
     
     // MARK: Internal methods
@@ -42,7 +51,8 @@ final class UpcomingTableViewCell: UITableViewCell {
                                                         transition: .fadeIn(duration: 0.33)),
                            into: self.coverImage)
         }
-        
+        self.releaseDateLabel.text = movie.formattedData
         self.nameLabel.text = movie.title
+        self.genreLabel.text = Genre.genresNames(ids: movie.genre_ids).map({ $0.name }).first
     }
 }

@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		3A6AA38CE0AFB4150FD214D3 /* Pods_TMDB_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEBCE95954DF8A04C931354 /* Pods_TMDB_App.framework */; };
 		44A07A388B81E16E428F2EC7 /* Pods_TMDB_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51506C14479AEF5792F52BDF /* Pods_TMDB_AppTests.framework */; };
-		AD027E802154632100A42036 /* UpcomingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD027E7F2154632100A42036 /* UpcomingListViewController.xib */; };
 		AD027E8D2156EC4200A42036 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD027E8B2156EC4200A42036 /* UpcomingTableViewCell.swift */; };
 		AD027E8E2156EC4200A42036 /* UpcomingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD027E8C2156EC4200A42036 /* UpcomingTableViewCell.xib */; };
 		AD027E932156F94400A42036 /* TMDBApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD027E922156F94400A42036 /* TMDBApi.swift */; };
 		AD027E962156F9E800A42036 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD027E952156F9E800A42036 /* Movie.swift */; };
+		AD027E982157611000A42036 /* UpcomingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD027E972157611000A42036 /* UpcomingListViewModel.swift */; };
+		AD027E9B2157786700A42036 /* genres.json in Resources */ = {isa = PBXBuildFile; fileRef = AD027E9A2157786700A42036 /* genres.json */; };
+		AD027E9D21577A2200A42036 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD027E9C21577A2200A42036 /* Genre.swift */; };
 		AD8A7D8F2151F3390006ACA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A7D8E2151F3390006ACA2 /* AppDelegate.swift */; };
 		AD8A7D912151F3390006ACA2 /* UpcomingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A7D902151F3390006ACA2 /* UpcomingListViewController.swift */; };
 		AD8A7D962151F33A0006ACA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8A7D952151F33A0006ACA2 /* Assets.xcassets */; };
@@ -34,11 +36,13 @@
 /* Begin PBXFileReference section */
 		4B5D3BE90CCBF1F40F482311 /* Pods-TMDB AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51506C14479AEF5792F52BDF /* Pods_TMDB_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDB_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD027E7F2154632100A42036 /* UpcomingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingListViewController.xib; sourceTree = "<group>"; };
 		AD027E8B2156EC4200A42036 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		AD027E8C2156EC4200A42036 /* UpcomingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTableViewCell.xib; sourceTree = "<group>"; };
 		AD027E922156F94400A42036 /* TMDBApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApi.swift; sourceTree = "<group>"; };
 		AD027E952156F9E800A42036 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		AD027E972157611000A42036 /* UpcomingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingListViewModel.swift; sourceTree = "<group>"; };
+		AD027E9A2157786700A42036 /* genres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genres.json; sourceTree = "<group>"; };
+		AD027E9C21577A2200A42036 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		AD8A7D8B2151F3390006ACA2 /* TMDB App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8A7D8E2151F3390006ACA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD8A7D902151F3390006ACA2 /* UpcomingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingListViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				AD8A7D902151F3390006ACA2 /* UpcomingListViewController.swift */,
-				AD027E7F2154632100A42036 /* UpcomingListViewController.xib */,
+				AD027E972157611000A42036 /* UpcomingListViewModel.swift */,
 				AD027E8B2156EC4200A42036 /* UpcomingTableViewCell.swift */,
 				AD027E8C2156EC4200A42036 /* UpcomingTableViewCell.xib */,
 			);
@@ -128,6 +132,7 @@
 		AD027E8F2156EEFD00A42036 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AD027E992157781400A42036 /* Mocks */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -136,8 +141,17 @@
 			isa = PBXGroup;
 			children = (
 				AD027E952156F9E800A42036 /* Movie.swift */,
+				AD027E9C21577A2200A42036 /* Genre.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AD027E992157781400A42036 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AD027E9A2157786700A42036 /* genres.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		AD8A7D822151F3390006ACA2 = {
@@ -267,8 +281,8 @@
 			files = (
 				AD8A7D992151F33A0006ACA2 /* LaunchScreen.storyboard in Resources */,
 				AD8A7D962151F33A0006ACA2 /* Assets.xcassets in Resources */,
-				AD027E802154632100A42036 /* UpcomingListViewController.xib in Resources */,
 				AD027E8E2156EC4200A42036 /* UpcomingTableViewCell.xib in Resources */,
+				AD027E9B2157786700A42036 /* genres.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,14 +340,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TMDB App/Pods-TMDB App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -350,14 +364,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -377,7 +391,9 @@
 				AD027E932156F94400A42036 /* TMDBApi.swift in Sources */,
 				AD027E8D2156EC4200A42036 /* UpcomingTableViewCell.swift in Sources */,
 				AD8A7D8F2151F3390006ACA2 /* AppDelegate.swift in Sources */,
+				AD027E982157611000A42036 /* UpcomingListViewModel.swift in Sources */,
 				AD027E962156F9E800A42036 /* Movie.swift in Sources */,
+				AD027E9D21577A2200A42036 /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

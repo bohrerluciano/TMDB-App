@@ -26,45 +26,9 @@ final class TMDBApi {
     // MARK: Private variables
     
     private let apiKey: String = "1f54bd990f1cdfb230adb312546d765d"
-    
+   
     // MARK: Internal methods
-    func getGenres() -> Single<[Genre]> {
-        
-        let url = TMDBApi.baseUrl + Endpoint.getGenres
-        
-        return Single.create(subscribe: { (event) -> Disposable in
-            guard let url = URL(string: url) else {
-                event(.error(Error.generic))
-                return Disposables.create()
-            }
-            
-            let request = Alamofire.request(url, method: .get, parameters: ["api_key": self.apiKey], encoding: URLEncoding.queryString, headers: [:])
-            
-            request.responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let object):
-                    guard
-                          let dict = object as? [String: Any],
-                          let items = dict["genres"],
-                          let data = try? JSONSerialization.data(withJSONObject: items, options: .prettyPrinted)
-                    else { return }
-                        
-                    let decoder = JSONDecoder()
-                    let genres = try! decoder.decode([Genre].self, from: data)
-                    print(genres)
-                
-                case .failure(let error):
-                    break
-                }
-            })
-            return Disposables.create {
-                request.cancel()
-            }
-        })
-    }
-    
-    // MARK: Internal methods
-    func getUpcoming() -> Single<[Movie]> {
+    func getUpcoming(page: Int) -> Single<[Movie]> {
         
         let url = TMDBApi.baseUrl + Endpoint.getUpcoming
         
@@ -74,7 +38,11 @@ final class TMDBApi {
                 return Disposables.create()
             }
             
-            let request = Alamofire.request(url, method: .get, parameters: ["api_key": self.apiKey], encoding: URLEncoding.queryString, headers: [:])
+            let request = Alamofire.request(url,
+                                            method: .get,
+                                            parameters: ["api_key": self.apiKey, "page": "\(page)"],
+                                            encoding: URLEncoding.queryString,
+                                            headers: [:])
             
             request.responseJSON(completionHandler: { (response) in
                 switch response.result {
@@ -90,7 +58,7 @@ final class TMDBApi {
                     event(.success(movies ?? []))
                     
                 case .failure(let error):
-                    break
+                    event(.error(error))
                 }
             })
             return Disposables.create {
