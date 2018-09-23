@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Nuke
 
 // MARK: - Class
 final class UpcomingTableViewCell: UITableViewCell {
 
     // MARK: IBOutlets
-    @IBOutlet weak var coverImage: UIImageView!
-    @IBOutlet weak var containerCell: UIView!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet private weak var coverImage: UIImageView!
+    @IBOutlet private weak var containerCell: UIView!
+    @IBOutlet private weak var releaseDateLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var genreLabel: UILabel!
     
     // MARK: Overridden methods
     override func awakeFromNib() {
@@ -31,5 +32,17 @@ final class UpcomingTableViewCell: UITableViewCell {
         self.containerCell.backgroundColor = UIColor.white
         self.containerCell.layer.cornerRadius = 6
         self.containerCell.clipsToBounds = true
+    }
+    
+    // MARK: Internal methods
+    func configure(movie: Movie) {
+        if let url = URL(string: TMDBApi.imageBaseUrl + (movie.poster_path ?? "")) {
+            Nuke.loadImage(with: url,
+                           options: ImageLoadingOptions(placeholder: UIImage(named: "placeholder-image"),
+                                                        transition: .fadeIn(duration: 0.33)),
+                           into: self.coverImage)
+        }
+        
+        self.nameLabel.text = movie.title
     }
 }

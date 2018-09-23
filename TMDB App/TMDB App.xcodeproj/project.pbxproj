@@ -125,11 +125,11 @@
 			path = "List Upcoming Movies";
 			sourceTree = "<group>";
 		};
-		AD027E8F2156EEFD00A42036 /* Utils */ = {
+		AD027E8F2156EEFD00A42036 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Utils;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AD027E942156F9CC00A42036 /* Models */ = {
@@ -166,7 +166,7 @@
 				AD027E7C21545DB500A42036 /* Application */,
 				AD027E942156F9CC00A42036 /* Models */,
 				AD027E7D21545E3300A42036 /* Features */,
-				AD027E8F2156EEFD00A42036 /* Utils */,
+				AD027E8F2156EEFD00A42036 /* Networking */,
 			);
 			path = "TMDB App";
 			sourceTree = "<group>";
@@ -324,20 +324,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TMDB App/Pods-TMDB App-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB App/Pods-TMDB App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMDB App/Pods-TMDB App-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB App/Pods-TMDB App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8753677D2D562620B1B08B92 /* [CP] Embed Pods Frameworks */ = {
@@ -346,20 +348,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB AppTests/Pods-TMDB AppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

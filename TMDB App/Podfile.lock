@@ -1,25 +1,29 @@
 PODS:
   - Alamofire (4.7.3)
-  - RxCocoa (4.3.0):
+  - Nuke (7.4)
+  - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
-  - RxSwift (4.3.0)
+  - RxSwift (4.3.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Nuke (~> 7.0)
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Nuke
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  RxCocoa: 71b9cce833fbcb89a8eec11816dd225830c2bd3c
-  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
+  Nuke: 2a1a0166bf522257c1fc1be4cad5e60b7960c789
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: f64853d5176411497d352a502d8d1b2c87d58271
+PODFILE CHECKSUM: cd900c1c9bb2fcf30539b1cd8ae5ac19edb92cbb
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

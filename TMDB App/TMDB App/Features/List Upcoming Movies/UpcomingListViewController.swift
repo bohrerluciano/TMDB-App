@@ -24,6 +24,15 @@ final class UpcomingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        TMDBApi()
+            .getUpcoming()
+            .asObservable()
+            .bind(to: tableView.rx.items(cellIdentifier: "UpcomingTableViewCell",
+                                         cellType: UpcomingTableViewCell.self)) { (row, element, cell) in
+                                            cell.configure(movie: element)
+            }
+            .disposed(by: self.disposeBag)
+        
         self.setupView()
         self.setupRx()
     }
@@ -41,12 +50,6 @@ final class UpcomingListViewController: UIViewController {
     
     private func setupRx() {
         let items = Observable<[String]>.of(["item1","item2","item3","item4","item1","item2","item3","item4","item1","item2","item3","item4"])
-        
-        items.bind(to: tableView.rx.items(cellIdentifier: "UpcomingTableViewCell",
-                                          cellType: UpcomingTableViewCell.self)) { (row, element, cell) in
-                                            
-            }
-            .disposed(by: self.disposeBag)
         
     }
 }

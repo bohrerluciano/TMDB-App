@@ -5,6 +5,8 @@ def essential
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire', '~> 4.7'
+  pod 'Nuke', '~> 7.0'
+
 end 
 
 target 'TMDB App' do
@@ -15,7 +17,7 @@ target 'TMDB App' do
 
   target 'TMDB AppTests' do
     inherit! :search_paths
-
+    
     essential
 
   end
