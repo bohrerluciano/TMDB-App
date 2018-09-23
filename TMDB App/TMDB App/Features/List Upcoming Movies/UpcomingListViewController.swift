@@ -60,6 +60,15 @@ final class UpcomingListViewController: UIViewController {
             .bind(to: self.loadNextPage)
             .disposed(by: self.disposeBag)
         
+        self.tableView.rx
+            .modelSelected(Movie.self)
+            .asDriver()
+            .drive(onNext: { (movie) in
+                let vc = MovileDetailsViewController()
+                vc.movie = movie
+                self.navigationController?.pushViewController(vc, animated: true)
+            }).disposed(by: self.disposeBag)
+        
         self.viewModel?
             .items
             .bind(to: tableView.rx.items(cellIdentifier: "UpcomingTableViewCell",
